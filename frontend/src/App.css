@@ -1,44 +1,290 @@
+/* Arizona GLF Platform - Application Styles */
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Logo and brand styles */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
+/* Brand colors and typography */
+.brand-primary {
+  color: #005F99;
+}
+
+.brand-secondary {
+  color: #FFD700;
+}
+
+.brand-text {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+/* Layout components */
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Card components */
+.feature-card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Hero section */
+.hero-gradient {
+  background: linear-gradient(135deg, #005F99 0%, #0074b7 50%, #FFD700 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Navigation styles */
+.nav-blur {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Form styles */
+.form-container {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+}
+
+.form-field {
+  position: relative;
+}
+
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.875);
+  color: #005F99;
+}
+
+.form-field label {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  color: #6b7280;
+}
+
+/* Button animations */
+.btn-animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-animate:hover::before {
+  left: 100%;
+}
+
+/* Loading states */
+.skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* File upload styles */
+.upload-zone {
+  border: 2px dashed #d1d5db;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.upload-zone.drag-over {
+  border-color: #005F99;
+  background-color: rgba(0, 95, 153, 0.05);
+}
+
+.upload-progress {
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.upload-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #005F99, #0074b7);
+  transition: width 0.3s ease;
+}
+
+/* Data visualization */
+.chart-container {
+  position: relative;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Status indicators */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.status-online { background-color: #10b981; }
+.status-offline { background-color: #ef4444; }
+.status-pending { background-color: #f59e0b; }
+
+/* Responsive tables */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
   from {
-    transform: rotate(0deg);
+    transform: translateX(100%);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  .page-container { background: white !important; }
+  .card, .form-container { box-shadow: none !important; }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .feature-card {
+    border: 2px solid #000;
+  }
+  
+  .btn-primary {
+    border: 2px solid #000;
   }
 }
 
-.card {
-  padding: 2em;
+/* Focus management for accessibility */
+.focus-visible {
+  outline: 2px solid #005F99;
+  outline-offset: 2px;
 }
 
-.read-the-docs {
-  color: #888;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
+/* Selection colors */
+::selection {
+  background-color: rgba(0, 95, 153, 0.2);
+  color: #005F99;
+}
 
+::-moz-selection {
+  background-color: rgba(0, 95, 153, 0.2);
+  color: #005F99;
+}
