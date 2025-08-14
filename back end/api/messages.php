@@ -12,9 +12,9 @@ if ($method == 'OPTIONS') {
 }
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "react-chat";
+$username = "arizonag_wp167";
+$password = "Arizonahouse@279";
+$dbname = "arizonag_wp167";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

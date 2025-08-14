@@ -1,5 +1,5 @@
 
-const API_BASE = '/api';
+const API_BASE = 'https://www.arizonaglf.com/api';
 
 export interface LoginCredentials {
   email: string;
