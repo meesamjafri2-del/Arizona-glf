@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 .env
 backend/vendor/
@@ -22,6 +23,35 @@ backend/vendor/
 node_modules/
 .env
 backend/vendor/
+node_modules/
+.env
+backend/vendor/
+=======
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+>>>>>>> e5731cea086736112c7509bf0afb1f368a35a0a1
 node_modules/
 .env
 backend/vendor/
