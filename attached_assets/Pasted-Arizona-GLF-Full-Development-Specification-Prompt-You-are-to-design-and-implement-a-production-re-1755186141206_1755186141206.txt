@@ -1,0 +1,139 @@
+Arizona GLF — Full Development Specification Prompt
+
+You are to design and implement a production-ready web platform for arizonaglf.com using the following stack:
+
+Frontend: React + Tailwind CSS (Vite)
+
+Backend: PHP 8.x on cPanel (shared hosting environment)
+
+Database: MySQL 8.x
+
+Hosting Environment: cPanel with Apache
+
+Email Handling: PHPMailer (SMTP configuration via cPanel)
+
+File Storage: Persistent storage within /uploads/ folder on cPanel
+
+IMPORTANT: The frontend design, layout, and static content (text, images, sections) are to be fetched and adapted from the current arizonaglf.com and edify.pk websites — modernized for responsiveness and accessibility, but keeping brand identity consistent.
+
+1. Core Features
+
+1.1 User Authentication
+
+Two separate roles: Admin and Client.
+
+Secure login/logout using PHP sessions.
+
+CSRF protection on all form submissions.
+
+Passwords hashed using password_hash() with PASSWORD_DEFAULT.
+
+Session timeout and regeneration for security.
+
+1.2 Client Dashboard
+
+Clients can log in and view a personalized dashboard.
+
+Upload and download their files securely (private directory /uploads/clients/{user_id}/).
+
+View messages and updates from Admin.
+
+Contact form to send messages to Admin (stored in DB + email notification via PHPMailer).
+
+1.3 Admin Portal
+
+View and manage all client accounts.
+
+Upload files to client directories and delete/update them.
+
+Site-wide admin file manager for /uploads/admin_files/.
+
+View, reply, and delete client messages.
+
+Dashboard overview: total clients, files uploaded, messages received.
+
+1.4 Public Pages
+
+Landing page, About, Services, and Contact pages styled like arizonaglf.com and edify.pk, but fully responsive and mobile-first.
+
+Contact form submission stored in DB + email sent to admin email.
+
+Include brand colors, fonts, and content sections based on reference sites, but optimize for speed and modern UI patterns.
+
+2. Technical Requirements
+
+2.1 Frontend
+
+Mobile-first, responsive UI using Tailwind’s utility classes.
+
+Component structure in /src/components/ and pages in /src/pages/.
+
+State management using React hooks.
+
+All API calls made via centralized hooks in /src/api/.
+
+Fetch calls with credentials: 'include' for session-based auth.
+
+Content and visuals adapted from reference websites.
+
+2.2 Backend
+
+API scripts in /public_html/api/ (grouped by auth/, admin/, client/).
+
+Shared DB connection logic in /includes/db.php.
+
+CSRF token generation & validation in /includes/security.php.
+
+File uploads handled via PHP move_uploaded_file() with MIME type validation.
+
+Max file size configurable via PHP ini_set().
+
+JSON responses with HTTP status codes.
+
+2.3 Database Schema
+Tables:
+
+users — id, role, name, email, password_hash, created_at
+
+files — id, user_id, file_name, file_path, uploaded_by, created_at
+
+messages — id, from_user, to_user, subject, body, status, created_at
+
+site_settings — id, setting_key, setting_value
+
+2.4 Security
+
+Use prepared statements (PDO) for all queries.
+
+No direct file access via URL — use PHP to serve files with permission checks.
+
+Sanitize all POST and GET inputs.
+
+Directory listing disabled in .htaccess.
+
+3. File Structure
+/src/               # React frontend source
+/public_html/       # cPanel public root
+    /api/           # PHP API scripts
+        /auth/
+        /admin/
+        /client/
+    /includes/      # DB connection, security, helpers
+    /uploads/       # File storage
+        /clients/{user_id}/
+        /admin_files/
+/setup/             # DB schema & setup scripts
+
+4. Deployment & Testing
+
+MySQL DB created via cPanel and seeded with /setup/seed.sql.
+
+Deploy PHP backend directly to /public_html/.
+
+Build React frontend with Vite and place dist/ output in /public_html/.
+
+Test user login, file uploads, message sending, and email notifications.
+
+Ensure HTTPS enforced via .htaccess redirect.
+
+Goal: Deliver a fully functional, secure, and maintainable web platform for Arizona GLF that is deployable on shared cPanel hosting without requiring external backend services or additional frameworks beyond the specified stack, with frontend visuals and structure based on arizonaglf.com and edify.pk.
