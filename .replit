@@ -11,3 +11,15 @@ run = ["sh", "-c", "npm run dev"]
 localPort = 5173
 externalPort = 3000
 exposeLocalhost = true
+
+[workflows]
+runButton = "Frontend Dev Server"
+
+[[workflows.workflow]]
+name = "Frontend Dev Server"
+author = 46422511
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd frontend && npm run dev -- --host 0.0.0.0 --port 5000"
