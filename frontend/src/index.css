@@ -1,75 +1,59 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Custom CSS Variables for Arizona GLF Brand Colors */
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --brand-blue: #005F99;
+  --brand-gold: #FFD700;
+  --brand-gray: #6B7280;
+  --brand-dark: #1F2937;
 }
 
+/* Base styles */
 body {
-  margin: 0;
-  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #374151;
   background-color: #ffffff;
 }
 
-/* Custom utilities for brand consistency */
-@layer utilities {
-  .text-brand-blue {
-    color: #005F99;
-  }
-  
-  .bg-brand-blue {
-    background-color: #005F99;
-  }
-  
-  .text-brand-gold {
-    color: #FFD700;
-  }
-  
-  .bg-brand-gold {
-    background-color: #FFD700;
-  }
-
-  .shadow-elegant {
-    box-shadow: 0 10px 25px rgba(0, 95, 153, 0.1);
-  }
-
-  .gradient-brand {
-    background: linear-gradient(135deg, #005F99 0%, #0073B7 100%);
-  }
+/* Custom utility classes */
+.text-brandBlue {
+  color: var(--brand-blue);
 }
 
-/* Animation utilities */
-@layer components {
-  .fade-in {
-    animation: fadeIn 0.6s ease-in-out;
-  }
-
-  .slide-up {
-    animation: slideUp 0.8s ease-out;
-  }
+.bg-brandBlue {
+  background-color: var(--brand-blue);
 }
 
-@keyframes fadeIn {
+.text-brandGold {
+  color: var(--brand-gold);
+}
+
+.bg-brandGold {
+  background-color: var(--brand-gold);
+}
+
+.border-brandBlue {
+  border-color: var(--brand-blue);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.focus\:ring-brandBlue:focus {
+  --tw-ring-color: var(--brand-blue);
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
   from {
     opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -77,20 +61,24 @@ body {
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #005F99;
-  border-radius: 4px;
-}
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-gray-900 {
+    background-color: #111827;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #0073B7;
+  .dark\:text-white {
+    color: #ffffff;
+  }
 }
