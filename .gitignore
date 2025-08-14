@@ -13,3 +13,6 @@ backend/vendor/
 node_modules/
 .env
 backend/vendor/
+node_modules/
+.env
+backend/vendor/
