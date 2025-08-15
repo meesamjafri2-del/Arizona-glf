@@ -9,8 +9,8 @@ const AboutPage: React.FC = () => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">About Arizona GLF</h1>
           <p className="text-xl max-w-3xl mx-auto leading-relaxed">
-            Arizona Global Logistics & Freight has been serving businesses across the Southwest with reliable, 
-            efficient transportation and logistics solutions for over a decade.
+            Your trusted partner in freight and logistics solutions across Arizona and beyond. 
+            We deliver excellence through innovation, reliability, and customer-focused service.
           </p>
         </div>
       </section>
@@ -41,17 +41,17 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-100 p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-gray-600 mb-6">
-                To provide exceptional logistics and freight services that enable our clients to focus on 
-                growing their businesses while we handle their transportation needs with precision and care.
-              </p>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-gray-600">
-                To be the Southwest's most trusted logistics partner, known for reliability, innovation, 
-                and unwavering commitment to customer success.
-              </p>
+            <div className="lg:pl-8">
+              <div className="bg-gray-100 rounded-xl p-8 h-96 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-brandBlue rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <p className="text-gray-600">Arizona GLF Headquarters</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -98,51 +98,57 @@ const AboutPage: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Integrity</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Customer Focus</h3>
               <p className="text-gray-600">
-                We conduct business with honesty, transparency, and respect for all stakeholders.
+                Your success is our priority. We tailor our services to meet your specific needs.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Meet the experienced professionals who lead Arizona GLF with passion and expertise.
+              Meet the experienced professionals leading Arizona GLF to new heights.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-6"></div>
+              <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">John Smith</h3>
               <p className="text-brandBlue mb-2">Chief Executive Officer</p>
-              <p className="text-gray-600 text-sm">
-                20+ years in logistics and transportation management
-              </p>
+              <p className="text-gray-600 text-sm">15+ years in logistics management</p>
             </div>
 
             <div className="text-center">
-              <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-6"></div>
+              <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Sarah Johnson</h3>
               <p className="text-brandBlue mb-2">Operations Director</p>
-              <p className="text-gray-600 text-sm">
-                Expert in supply chain optimization and logistics solutions
-              </p>
+              <p className="text-gray-600 text-sm">12+ years in supply chain operations</p>
             </div>
 
             <div className="text-center">
-              <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-6"></div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Mike Rodriguez</h3>
-              <p className="text-brandBlue mb-2">Fleet Manager</p>
-              <p className="text-gray-600 text-sm">
-                Ensures safety and efficiency across our entire fleet
-              </p>
+              <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Mike Davis</h3>
+              <p className="text-brandBlue mb-2">Technology Director</p>
+              <p className="text-gray-600 text-sm">10+ years in logistics technology</p>
             </div>
           </div>
         </div>
